@@ -189,8 +189,7 @@ export default function App() {
     setLoading(true)
 
     try {
-      const apiMessages = newMessages.map(m => ({ role: m.role, content: m.content }))
-      const resp = await fetch('https://api.anthropic.com/v1/messages', {
+      const resp = await fetch('/api/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
